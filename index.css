@@ -1,0 +1,10 @@
+canvas{
+    display: none !important;
+}
+#myImageElementInTheDom{
+    display: none;
+}
+input[type="radio"]:checked + label {
+    border: 2px dashed #666;
+
+  }
