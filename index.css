@@ -8,3 +8,35 @@ input[type="radio"]:checked + label {
     border: 2px dashed #666;
 
   }
+  .puzzle{
+    border: 1px solid black;
+    
+  }
+  .startmenu{
+    display: flex !important;
+    position: fixed !important;
+    z-index: 99 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: rgba(43, 43, 43, 0.925) !important;
+    margin: 0!important;
+}
+#formelement1{
+    background-color: white;
+    border-radius: 20px;
+}
+.imgChoice img:hover{
+  transform: scale(3);
+  transition: all 1s ease;
+}
+@media (max-width:1024px) {
+  .main{
+    flex-direction: column !important;
+  }
+}
+
+/* While checking responsivness of the webpage pls refresh everytime you use it as i have given responsivness in JS not in CSS */

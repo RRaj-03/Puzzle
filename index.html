@@ -6,25 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Puzzle</title>
-  <link rel="stylesheet" href="index.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
   <div class="min-h-full">
+    <div id="leaderBoard">
+      
+    </div>
 
 
-
-    <h1 class="display-6 text-center card">Puzzle</h1>
+    <div id="alert"></div>
+    <h1 class="display-6 text-center card fw-semibold">PUZZLE</h1>
     <canvas id="canvas"></canvas>
     <img src="" alt="" srcset=" " id="myImageElementInTheDom">
-    <div class="container card justify-content-between flex flex-row">
-        <div class="content" id="content">
+    <div class="main container card justify-content-between flex flex-row">
+      <div class="content puzzleContainer m-auto" id="content" tabindex="-1">
 
 
-        </div>
+      </div>
       <div class="gameControls w-100">
         <div class="card p-2  my-2">
           <h2 class="text-center"> GAME INFO </h2>
@@ -38,26 +43,34 @@
 
           <h2 class="text-center"> New GAME </h2>
           <div class="d-flex justify-content-between">
-          <label for="customRange3" class="form-label fw-bold">Puzzle Size:</label>
-          <input type="range" class="form-range border-0 w-75 " min="3" max="10" step="1"
-              id="customRange3">
-            <span class="mx-1" id="inputnumber">3</span>
+            <label for="customRange3" class="form-label fw-bold" id="puzzleSize">Puzzle Size:</label>
+            <input type="range" class="form-range border-0 w-75 " min="3" max="10" step="1" id="customRange3" value="4">
+            <span class="mx-1" id="inputnumber">4</span>
           </div>
-          <div class="imgChoice ">
-            <label class="fw-bold">Image Selection:</label>
+          <div class="d-flex">
+            <label class="fw-bold ">Image Selection:</label>
+          <div class="imgChoice mx-2">
             <input type="radio" name="imgselection" class="btn-check" id="btn-check-2" checked autocomplete="off">
-<label for="btn-check-2"><img src="default-placeholder.png" class="card-img-top" alt="..." height="50px" width="50px"></label>
-<input type="radio" name="imgselection" class="btn-check" id="btn-check-3" checked autocomplete="off">
-<label for="btn-check-3"><img src="default-placeholder.png" class="card-img-top" alt="..." height="50px" width="50px"></label>
-<input type="radio" name="imgselection" class="btn-check" id="btn-check-4" checked autocomplete="off">
-<label for="btn-check-4"><img src="default-placeholder.png" class="card-img-top" alt="..." height="50px" width="50px"></label>
-</div>
-<button type="submit" class="btn btn-primary m-auto mt-2" onclick ="submit(event)">Submit</button>
+            <label for="btn-check-2"><img src="img.jpg" class="card-img" alt="..." height="50px"
+                width="50px"></label>
+            <input type="radio" name="imgselection" class="btn-check" id="btn-check-3" checked autocomplete="off">
+            <label for="btn-check-3"><img src="img1.jpg" class="card-img" alt="..." height="50px"
+                width="50px"></label>
+            <input type="radio" name="imgselection" class="btn-check" id="btn-check-4" checked autocomplete="off">
+            <label for="btn-check-4"><img src="img.png" class="card-img" alt="..." height="50px"
+                width="50px"></label>
+          </div>
+          </div>
+          <button type="submit" class="btn btn-primary m-auto mt-2" onclick="submit(event)">Submit</button>
         </div>
         <div class="card p-2  my-2">
-          <h2 class="text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse" aria-expanded="false" aria-controls="collapse"> Instruction </h2>
+          <h2 class="text-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse"
+            aria-expanded="false" aria-controls="collapse"> Instruction<span
+              class="material-symbols-outlined position-absolute" style="top:25%;right:10px">
+              arrow_drop_down_circle
+            </span> </h2>
           <ol class="list-group list-group-numbered collapse" id="collapse">
-            
+
             <!-- <li class="list-group-item d-flex justify-content-between align-items-start">
           <div class="ms-2 me-auto">
             <div class="fw-bold">Choose Number of player</div>
@@ -77,7 +90,8 @@
                   <li class="list-group-item">After generating number from the dice <strong>select the number
                       card</strong> and then <strong>press the token</strong> you want to move.</li>
                   <li class="list-group-item">If you have no tokens to move, then your chance will be
-                    <strong>skipped</strong></li>
+                    <strong>skipped</strong>
+                  </li>
                 </ul>
               </div>
             </li>
