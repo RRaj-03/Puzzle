@@ -81,7 +81,7 @@ timer.innerHTML=`<strong>Time elapsed: 0 seconds</strong>`
 let moves = document.getElementById("moves")
   moves.innerHTML=`<strong>Moves: 0 </strong>`
   document.getElementById("content").style.pointerEvents="auto"
-// setTimeout(shuffle,100)
+setTimeout(shuffle,100)
 window.addEventListener("keydown", keypress)
 }
 function afteronload() {
