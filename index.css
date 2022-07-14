@@ -37,6 +37,9 @@ input[type="radio"]:checked + label {
   .main{
     flex-direction: column !important;
   }
+  #content{
+    margin: auto !important;
+  }
 }
 
 /* While checking responsivness of the webpage pls refresh everytime you use it as i have given responsivness in JS not in CSS */
