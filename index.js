@@ -120,7 +120,6 @@ function swapTiles(IMG1,IMG2) {
   document.getElementById(IMG1).className = document.getElementById(IMG2).className;
   document.getElementById(IMG2).className = temp;
   if(Game.shuffled){
-    Game.moves++
   if(Game.moves==1){
     Game.Time.start= new Date()
     Game.playing=true
@@ -188,11 +187,15 @@ function clickTile(event) {//eventlistner
         const element = document.getElementById(`IMG${row}${i}`);
         if(element.classList.contains(`tile${(Game.Len*Game.Len)-1}`)){
           if(column>i){
+    Game.moves++
+
             for (let j = i; j < column; j++) {
               swapTiles(`IMG${row}${j}`,`IMG${row}${j+1}`)              
             }
           }
           if(column<i){
+    Game.moves++
+
             for (let j = i; j > column; j--) {
               swapTiles(`IMG${row}${j}`,`IMG${row}${j-1}`)              
             }
@@ -203,11 +206,15 @@ function clickTile(event) {//eventlistner
         const element = document.getElementById(`IMG${i}${column}`);
         if(element.classList.contains(`tile${(Game.Len*Game.Len)-1}`)){
           if(row>i){
+    Game.moves++
+
             for (let j = i; j < row; j++) {
               swapTiles(`IMG${j}${column}`,`IMG${j+1}${column}`)              
             }
           }
           if(row<i){
+    Game.moves++
+
             for (let j = i; j > row; j--) {
               swapTiles(`IMG${j}${column}`,`IMG${j-1}${column}`)              
             }
